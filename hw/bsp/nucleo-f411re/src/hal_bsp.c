@@ -90,6 +90,25 @@ const struct stm32_uart_cfg os_bsp_uart2_cfg = {
 };
 #endif
 
+#if MYNEWT_VAL(PWM_0)
+struct stm32_pwm_conf os_bsp_pwm0_cfg = {
+    .tim = TIM3,
+    .irq = TIM3_IRQn,
+};
+#endif
+// #if MYNEWT_VAL(PWM_1)
+// struct stm32_pwm_conf os_bsp_pwm1_cfg = {
+//     .tim = TIM3,
+//     .irq = TIM3_IRQn,
+// };
+// #endif
+// #if MYNEWT_VAL(PWM_2)
+// struct stm32_pwm_conf os_bsp_pwm2_cfg = {
+//     .tim = TIM3,
+//     .irq = TIM3_IRQn,
+// };
+// #endif
+
 static const struct hal_bsp_mem_dump dump_cfg[] = {
     [0] = {
         .hbmd_start = &_ram_start,

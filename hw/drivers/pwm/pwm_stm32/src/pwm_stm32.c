@@ -147,17 +147,17 @@ stm32_pwm_isr_0(void)
     stm32_pwm_isr(&stm32_pwm_dev[0]);
 }
 
-static void
-stm32_pwm_isr_1(void)
-{
-    stm32_pwm_isr(&stm32_pwm_dev[1]);
-}
+// static void
+// stm32_pwm_isr_1(void)
+// {
+//     stm32_pwm_isr(&stm32_pwm_dev[1]);
+// }
 
-static void
-stm32_pwm_isr_2(void)
-{
-    stm32_pwm_isr(&stm32_pwm_dev[2]);
-}
+// static void
+// stm32_pwm_isr_2(void)
+// {
+//     stm32_pwm_isr(&stm32_pwm_dev[2]);
+// }
 
 static int
 stm32_pwm_enable(struct pwm_dev *dev)
@@ -374,12 +374,12 @@ stm32_pwm_configure(struct pwm_dev *dev, struct pwm_dev_cfg *cfg)
         case 0:
             NVIC_SetVector(pwm->irq, (uintptr_t)stm32_pwm_isr_0);
             break;
-        case 1:
-            NVIC_SetVector(pwm->irq, (uintptr_t)stm32_pwm_isr_1);
-            break;
-        case 2:
-            NVIC_SetVector(pwm->irq, (uintptr_t)stm32_pwm_isr_2);
-            break;
+        // case 1:
+        //     NVIC_SetVector(pwm->irq, (uintptr_t)stm32_pwm_isr_1);
+        //     break;
+        // case 2:
+        //     NVIC_SetVector(pwm->irq, (uintptr_t)stm32_pwm_isr_2);
+        //     break;
         default:
             return STM32_PWM_ERR_NODEV;
         }
